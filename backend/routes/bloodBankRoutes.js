@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const BloodBank = require("../models/bloodbank");
-
+const BloodBank = require("../models/BloodBank");
 router.post("/", async (req, res) => {
   try {
     const bank = await BloodBank.create(req.body);

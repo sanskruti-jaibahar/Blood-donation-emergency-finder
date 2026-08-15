@@ -1,22 +1,33 @@
 const express = require("express");
 const router = express.Router();
-const Request = require("../models/Request");
+const Donor = require("../models/donor");
 
+// Register donor
 router.post("/", async (req, res) => {
   try {
-    const request = await Request.create(req.body);
-    res.status(201).json(request);
+    const donor = await Donor.create(req.body);
+
+    res.status(201).json({
+      message: "Donor Registered Successfully",
+      data: donor,
+    });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({
+      message: error.message,
+    });
   }
 });
 
+// Get available donors
 router.get("/", async (req, res) => {
   try {
-    const requests = await Request.find({ status: "Pending" });
-    res.json(requests);
+    const donors = await Donor.find({ available: true });
+
+    res.status(200).json(donors);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({
+      message: error.message,
+    });
   }
 });
 
