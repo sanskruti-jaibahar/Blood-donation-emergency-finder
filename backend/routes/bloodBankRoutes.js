@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const BloodBank = require("../models/BloodBank");
+const BloodBank = require("../models/bloodbank");
 
 router.post("/", async (req, res) => {
   try {
