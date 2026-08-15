@@ -1,0 +1,115 @@
+/* =========================
+   Global Page Animation
+========================= */
+
+.page-animation {
+  animation: pageFade 0.6s ease-out;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   Smooth Sections
+========================= */
+
+.hero-section,
+.features-section,
+.cta-section {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   Card Animation
+========================= */
+
+.feature-card,
+.hero-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feature-card:hover,
+.hero-card:hover {
+  transform: translateY(-6px);
+}
+
+
+/* =========================
+   Button Animation
+========================= */
+
+button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================
+   Navbar Animation
+========================= */
+
+nav {
+  animation: navbarDown 0.6s ease-out;
+}
+
+@keyframes navbarDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   Accessibility
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
