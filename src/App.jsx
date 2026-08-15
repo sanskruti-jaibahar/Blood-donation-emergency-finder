@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import FindBlood from "./pages/FindBlood";
@@ -12,13 +13,53 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/find-blood" element={<FindBlood />} />
-        <Route path="/blood-banks" element={<BloodBanks />} />
-        <Route path="/become-donor" element={<BecomeDonor />} />
-        <Route path="/emergency" element={<Emergency />} />
+  <Route
+    path="/"
+    element={
+      <div className="page-animation">
+        <Home />
+      </div>
+    }
+  />
 
-      </Routes>
+  <Route
+    path="/find-blood"
+    element={
+      <div className="page-animation">
+        <FindBlood />
+      </div>
+    }
+  />
+
+  <Route
+    path="/blood-banks"
+    element={
+      <div className="page-animation">
+        <BloodBanks />
+      </div>
+    }
+  />
+
+  <Route
+    path="/become-donor"
+    element={
+      <div className="page-animation">
+        <BecomeDonor />
+      </div>
+    }
+  />
+
+  <Route
+    path="/emergency"
+    element={
+      <div className="page-animation">
+        <Emergency />
+      </div>
+    }
+  />
+</Routes>
+
+      
     </BrowserRouter>
   );
 }

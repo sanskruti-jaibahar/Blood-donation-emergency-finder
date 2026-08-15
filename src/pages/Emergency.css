@@ -209,3 +209,148 @@
     padding: 25px;
   }
 }
+/* =========================
+   EMERGENCY ANIMATIONS
+========================= */
+
+.emergency-intro {
+  animation: emergencyLeft 0.8s ease-out;
+}
+
+.emergency-form-card {
+  animation: emergencyRight 0.8s ease-out;
+}
+
+.emergency-badge {
+  animation: fadeUp 0.6s ease-out;
+}
+
+.emergency-note {
+  animation: fadeUp 0.8s ease-out 0.25s both;
+}
+
+
+/* Form card effect */
+
+.emergency-form-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.emergency-form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(99, 28, 35, 0.14);
+}
+
+
+/* Form inputs */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  transform: translateY(-2px);
+  border-color: #d62839;
+  box-shadow: 0 0 0 4px rgba(214, 40, 57, 0.1);
+}
+
+
+/* Blood icon pulse */
+
+.form-icon {
+  animation: emergencyPulse 2s ease-in-out infinite;
+}
+
+
+/* Emergency note */
+
+.emergency-note {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.emergency-note:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(99, 28, 35, 0.08);
+}
+
+
+/* Submit button */
+
+.emergency-submit {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.emergency-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(214, 40, 57, 0.25);
+}
+
+.emergency-submit:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes emergencyLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes emergencyRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes emergencyPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
